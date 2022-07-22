@@ -11,6 +11,7 @@ const Register = () => {
   const navigate = useNavigate();
 
   const [signupUser, { data, loading, error }] = useMutation(SIGNUP_USER, {
+    refetchQueries: ['getAllQuotes', 'profileData'],
     fetchPolicy: 'network-only',
   });
 

@@ -11,6 +11,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const [signinUser, { data, loading, error }] = useMutation(LOGIN_USER, {
+    refetchQueries: ['getAllQuotes', 'profileData'],
     fetchPolicy: 'network-only',
   });
 
