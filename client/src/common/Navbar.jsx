@@ -31,13 +31,6 @@ const Navbar = () => {
                     <span
                       className='text-white px-3 py-2 rounded-md text-sm font-medium cursor-pointer'
                       aria-current='page'
-                      onClick={() => navigate('/dashboard')}
-                    >
-                      Dashboard
-                    </span>
-                    <span
-                      className='text-white px-3 py-2 rounded-md text-sm font-medium cursor-pointer'
-                      aria-current='page'
                       onClick={() => navigate('/profile')}
                     >
                       Profile

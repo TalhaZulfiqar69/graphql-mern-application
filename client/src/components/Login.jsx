@@ -17,7 +17,7 @@ const Login = () => {
   useEffect(() => {
     if (data && data.user) {
       localStorage.setItem('token', data.user.token);
-      navigate('/dashboard');
+      navigate('/profile');
       toast.success(`Welcome back`);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
