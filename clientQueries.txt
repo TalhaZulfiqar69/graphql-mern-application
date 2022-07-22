@@ -1,0 +1,68 @@
+----------------------------------------
+get all users query
+----------------------------------------
+query getAllUsers {
+  users {
+    _id
+    firstName
+    lastName
+    email
+  }
+}
+----------------------------------------
+get user by _id query
+----------------------------------------
+query getUserById{
+  user(_id: "3") {
+    _id
+    lastName
+    lastName
+    email
+  }
+}
+----------------------------------------
+get all quotes query
+----------------------------------------
+query getAllQuotes{
+  quotes{
+    by
+    name
+  }
+}
+----------------------------------------
+get data by _id query
+----------------------------------------
+query getQuoteByUser{
+  iquote(by: "1") {
+      name
+      by
+  }
+}
+----------------------------------------
+get data by _id query (dynamically)
+----------------------------------------
+query getUserById($userId:ID!){
+  user(_id: $userId) {
+    _id
+    lastName
+    lastName
+    email
+    quotes{
+      name
+      by
+    }
+  }
+}
+
+----------------------------------------
+Store data in database mutation
+----------------------------------------
+mutation userRegistration($newUser: UserInput!) {
+  user: registerUser(newUser: $newUser){
+    _id
+    firstName
+    lastName
+    email
+    password
+  }
+}
