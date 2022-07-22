@@ -11,7 +11,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const [signinUser, { data, loading, error }] = useMutation(LOGIN_USER, {
-    fetchPolicy: 'cache-and-network',
+    fetchPolicy: 'network-only',
   });
 
   useEffect(() => {

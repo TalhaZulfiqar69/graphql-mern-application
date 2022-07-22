@@ -11,7 +11,7 @@ const Register = () => {
   const navigate = useNavigate();
 
   const [signupUser, { data, loading, error }] = useMutation(SIGNUP_USER, {
-    fetchPolicy: 'cache-and-network',
+    fetchPolicy: 'network-only',
   });
 
   useEffect(() => {

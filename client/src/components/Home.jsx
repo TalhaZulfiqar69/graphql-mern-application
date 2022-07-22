@@ -22,7 +22,16 @@ const Home = () => {
   }
   return (
     <div className='flex flex-col gap-2 items-center bg-white mt-12'>
-      {data.quotes &&
+      {!data ? (
+        <div className='border-gray-300 border-2 rounded-xl w-[40rem] py-7 px-5'>
+          <div className='grid grid-cols-6 gap-3'>
+            <div className='col-span-4'>
+              <p className='text-gray-500 mt-4'>No Quote Available</p>
+            </div>
+          </div>
+        </div>
+      ) : (
+        data.quotes &&
         data.quotes.map((quoteData) => (
           <div
             className='border-gray-300 border-2 rounded-xl w-[40rem] py-7 px-5'
@@ -51,7 +60,8 @@ const Home = () => {
               </div>
             </div>
           </div>
-        ))}
+        ))
+      )}
       <Toaster position='top-right' reverseOrder={false} />
     </div>
   );

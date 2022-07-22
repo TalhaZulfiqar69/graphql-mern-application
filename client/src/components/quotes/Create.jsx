@@ -11,7 +11,7 @@ const CreateQuote = () => {
   const navigate = useNavigate();
   const [creatingQuote, { loading, data, error }] = useMutation(CREATE_QUOTE, {
     refetchQueries: ['getAllQuotes', 'profileData'],
-    fetchPolicy: 'cache-and-network',
+    fetchPolicy: 'network-only',
   });
 
   useEffect(() => {
